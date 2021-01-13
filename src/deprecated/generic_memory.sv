@@ -12,7 +12,8 @@ module generic_memory
 #(
   parameter ADDR_WIDTH = 12,
   parameter DATA_WIDTH = 32,
-  parameter BE_WIDTH   = DATA_WIDTH/8
+  parameter BYTE_WIDTH = 8,
+  parameter BE_WIDTH   = DATA_WIDTH/BYTE_WIDTH
 )
 (
   input  logic                  CLK,
@@ -36,9 +37,9 @@ module generic_memory
    generate
       for (i=0; i<BE_WIDTH; i++)
         begin
-           for (j=0; j<8; j++)
+           for (j=0; j<BYTE_WIDTH; j++)
              begin
-                assign M[i*8+j] = BEN[i];
+                assign M[i*BYTE_WIDTH+j] = BEN[i];
              end
         end
    endgenerate
