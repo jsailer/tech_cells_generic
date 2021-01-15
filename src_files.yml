@@ -6,6 +6,7 @@ tech_cells_rtl:
     src/deprecated/cluster_clk_cells.sv,
     src/deprecated/cluster_pwr_cells.sv,
     src/deprecated/generic_memory.sv,
+    src/deprecated/generic_memory_dift.sv,
     src/deprecated/generic_rom.sv,
     src/deprecated/pad_functional.sv,
     src/deprecated/pulp_buffer.sv,
